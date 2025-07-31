@@ -110,12 +110,6 @@ Within the same status, agents are sorted alphabetically by first name.
 
 ## 🌐 API Integration
 
-The application integrates with the following API endpoint:
-
-```
-GET https://3nzfzc8au7.execute-api.us-east-1.amazonaws.com/default/agents
-```
-
 ### API Response Format
 
 ```json
