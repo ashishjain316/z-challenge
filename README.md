@@ -29,6 +29,7 @@ A modern, responsive React application for managing and monitoring contact cente
 - **Frontend**: React 19.1.0 with TypeScript
 - **Styling**: Tailwind CSS 4.1.11
 - **Build Tool**: Vite 7.0.4
+- **Testing**: Playwright for end-to-end testing
 - **Development**: ESLint, TypeScript ESLint
 - **API**: RESTful API integration
 
@@ -56,22 +57,6 @@ A modern, responsive React application for managing and monitoring contact cente
 4. **Open your browser**
    Navigate to `http://localhost:5173` (or the URL shown in your terminal)
 
-## 🏗️ Project Structure
-
-```
-z-challenge/
-├── src/
-│   ├── components/
-│   │   └── AgentList.tsx          # Main agent management component
-│   ├── App.tsx                    # Root application component
-│   ├── main.tsx                   # Application entry point
-│   └── index.css                  # Global styles
-├── public/                        # Static assets
-├── package.json                   # Dependencies and scripts
-├── tsconfig.json                  # TypeScript configuration
-├── vite.config.ts                 # Vite build configuration
-└── README.md                      # This file
-```
 
 ## 🎯 Usage
 
@@ -101,12 +86,44 @@ Agents are automatically sorted by status priority:
 
 Within the same status, agents are sorted alphabetically by first name.
 
+## 🧪 Testing
+
+This project uses **Playwright** for comprehensive end-to-end testing.
+
+### Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Run tests with UI mode (interactive)
+npm run test:ui
+
+```
+
+### Test Coverage
+
+The test suite covers:
+
+- ✅ **Component Rendering**: Page title, loading states, agent display
+- ✅ **Filtering Functionality**: Status filtering, count updates
+- ✅ **Sorting Logic**: Status priority and alphabetical sorting
+- ✅ **Error Handling**: API errors, network timeouts, malformed responses
+
+### Test Structure
+
+- **`tests/agent-list.spec.ts`**: Comprehensive test suite covering all major functionality
+- **Mock API System**: Realistic test data with different agent statuses
+- **Error Scenarios**: API failures
+
 ## 🔧 Available Scripts
 
 - `npm run dev` - Start development server with hot reload
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint for code quality
+- `npm test` - Run Playwright tests
+- `npm run test:ui` - Run tests with interactive UI
 
 ## 🌐 API Integration
 
